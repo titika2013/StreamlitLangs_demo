@@ -22,7 +22,7 @@ if uploaded_file is not None:
     image_orig = Image.open(uploaded_file).convert('RGB')
     st.image(image_orig, caption='Uploaded image', use_column_width=True)
     st.write("Classifying...")
-    model = keras.models.load_model(r"StreamlitLangs_demo/Unet_custom_visual.hdf5")
+    model = keras.models.load_model(r"StreamlitLangs_demo/custom_modell.hdf5")
     my_bar = st.progress(0)
 
     img_array = np.array(image_orig)
