@@ -13,7 +13,7 @@ st.title("Chest x-ray Covid predictor")
 submit = st.button("Example of the chest x-ray image")
 if submit:
     image_example = Image.open(
-        "StreamlitLangs_demo/example_lung.jpg")  # can be problem with path use (example_lung.jpg)
+        "StreamlitLungs_demo/example_lung.jpg")  # can be problem with path use (example_lung.jpg)
     st.image(image_example, caption='Example of the chest x-ray image', width=512)
 
 uploaded_file = st.file_uploader("Choose chest x-ray image. Recommended resolution was more then (512, 512).",
@@ -24,7 +24,7 @@ if uploaded_file is not None:
     st.image(image_orig, caption='Uploaded image', use_column_width=True)
     st.write("Classifying...")
     model = keras.models.load_model(
-        r"StreamlitLangs_demo/custom_model.hdf5")  # can be problem with path use (custom_model.hdf5)
+        r"StreamlitLungs_demo/custom_model.hdf5")  # can be problem with path use (custom_model.hdf5)
     my_bar = st.progress(0)
 
     img_array = np.array(image_orig)
